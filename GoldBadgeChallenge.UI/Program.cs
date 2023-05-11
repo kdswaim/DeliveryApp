@@ -31,9 +31,9 @@ class Program
                     }
                     break;
                 case "2":
-                var allDeliveries = deliveryManager.GetAllDeliveries();
-                System.Console.WriteLine("All deliveries:");
-                foreach (var delivery in allDeliveries)
+                var pastDeliveries = deliveryManager.GetPastDeliveries();
+                System.Console.WriteLine("Past deliveries:");
+                foreach (var delivery in pastDeliveries)
                 {
                     System.Console.WriteLine($"Delivery ID: {delivery.ID}, Date: {delivery.DeliveryDate}");
                 }

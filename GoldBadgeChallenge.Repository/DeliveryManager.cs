@@ -10,7 +10,7 @@ using System;
 
         public Guid AddDelivery(DateTime deliveryDate)
         {
-            var delivery = new Delivery {ID = Guid.NewGuid(), DeliveryDate = deliveryDate};
+            var delivery = new Delivery {ID = Guid.NewGuid(), DeliveryDate = deliveryDate, OrderDate = DateTime.Now};
             repository.AddDelivery(delivery);
             return delivery.ID;
         }
@@ -20,8 +20,8 @@ using System;
             return repository.GetDelivery(id);
         }
 
-        public List<Delivery> GetAllDeliveries()
+        public List<Delivery> GetPastDeliveries()
         {
-            return repository.GetAllDeliveries();
+            return repository.GetAllDeliveries().Where(d => d.DeliveryDate.Date < DateTime.Now.Date).OrderBy(d => d.DeliveryDate).ToList();
         }
     }
