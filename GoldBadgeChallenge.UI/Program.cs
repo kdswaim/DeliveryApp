@@ -1,49 +1,9 @@
-﻿using System;
-
-class Program
+public class Program
 {
-    static void Main()
+    public static void Main(string[] args)
     {
-        var DeliveryRepository = new DeliveryRepository();
-        var deliveryManager = new DeliveryManager(DeliveryRepository);
-
-        while (true) //main loop
-        {
-            System.Console.WriteLine("\n1. Add delivery");
-            System.Console.WriteLine("2. View all deliveries");
-            System.Console.WriteLine("3. Exit");
-
-            var choice = Console.ReadLine();
-
-            switch (choice)
-            {
-                case "1":
-                    System.Console.WriteLine("Enter delivery date (yyyy-mm-dd): ");
-                    var dateInput = Console.ReadLine();
-                    if(DateTime.TryParse(dateInput, out DateTime deliveryDate))
-                    {
-                        deliveryManager.AddDelivery(deliveryDate);
-                        System.Console.WriteLine("Delivery added successfully!");
-                    }
-                    else
-                    {
-                        System.Console.WriteLine("Invalid date format. Please try again.");
-                    }
-                    break;
-                case "2":
-                var pastDeliveries = deliveryManager.GetPastDeliveries();
-                System.Console.WriteLine("Past deliveries:");
-                foreach (var delivery in pastDeliveries)
-                {
-                    System.Console.WriteLine($"Delivery ID: {delivery.ID}, Date: {delivery.DeliveryDate}");
-                }
-                break;
-                case "3":
-                    return; //exits program
-                default:
-                    Console.WriteLine("Invalid option. Please try again.");
-                    break;
-            }
-        }
+        IDeliveryRepository repository = new DeliveryRepository();
+        ProgramUI ui = new ProgramUI(repository);
+        ui.Run();
     }
 }

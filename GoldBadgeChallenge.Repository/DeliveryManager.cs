@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
     public class DeliveryManager
     {
@@ -8,9 +10,9 @@ using System;
             this.repository = repository;
         }
 
-        public Guid AddDelivery(DateTime deliveryDate)
+        public Guid AddDelivery(DateTime deliveryDate, int quantity = 1)
         {
-            var delivery = new Delivery {ID = Guid.NewGuid(), DeliveryDate = deliveryDate, OrderDate = DateTime.Now};
+            var delivery = new Delivery (Guid.NewGuid(), DateTime.Now, quantity) {DeliveryDate = deliveryDate};
             repository.AddDelivery(delivery);
             return delivery.ID;
         }
