@@ -1,15 +1,14 @@
     public class Delivery
     {
-        public Delivery(Guid iD, DateTime orderDate, int quantity) 
+        public Delivery()
         {
-            this.ID = iD;
-            this.OrderDate = orderDate;
+            
+        }
+        public Delivery(int quantity, int customerId = 1) 
+        {
             this.Quantity = quantity;
-            this.CustomerId = CustomerId;
-
-            this.DeliveryDate = DateTime.MinValue;
+            this.CustomerId = customerId;
             this.OrderStatus = TaskStatus.Ordered;
-   
         }
 
         public enum TaskStatus
@@ -18,16 +17,30 @@
             InProgress,
             InTransit,
             Delivered
+        } //Nesting together is questionable
+
+        public int ID {get; set;}
+        public DateTime DeliveryDate
+        {
+            get 
+            {
+               return OrderDate.AddDays(7);
+            }
+            set 
+            {
+                value = OverrideDeliveryDate();
+            }
         }
-
-        public Guid ID {get; set;}
-        public DateTime DeliveryDate {get;set;}
-
-        public DateTime OrderDate {get; set;}
+        public DateTime OrderDate {get; set;} = DateTime.Now;
 
         public TaskStatus OrderStatus {get; set;}
 
         public int Quantity {get; set;}
 
         public int CustomerId {get; set;}
+
+        private DateTime OverrideDeliveryDate(int modDays = 3) 
+        {
+            return OrderDate.AddDays(modDays);
+        }
     }
