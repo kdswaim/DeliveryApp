@@ -64,17 +64,31 @@ namespace GBC.Repository.Tests
         [Fact]
         public void CanCancelDelivery()
         {
+            // Arrange
+            var delivery = _repository.GetAllDeliveries().FirstOrDefault();
+            var deliveryId = delivery.ID;
 
+            // Act
+            var isDeleted = _repository.DeleteDelivery(deliveryId);
 
-
-        }
+            // Assert
+            Assert.True(isDeleted);
+            Assert.Null(_repository.GetDelivery(deliveryId));
+}
 
         [Fact]
         public void CanGetNextOrder()
         {
+            // Arrange
+            var firstDelivery = _repository.GetAllDeliveries().OrderBy(d => d.OrderDate).FirstOrDefault();
+            var firstDeliveryId = firstDelivery.ID;
 
+            // Act
+            var nextOrder = _repository.GetNextOrder();
+
+            // Assert
+            Assert.NotNull(nextOrder);
+            Assert.Equal(firstDeliveryId, nextOrder.ID);
         }
-
-
     }
 }
