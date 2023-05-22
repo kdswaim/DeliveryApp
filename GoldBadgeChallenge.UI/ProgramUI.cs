@@ -135,8 +135,7 @@ public class ProgramUI
         "3. Delivered\n");
 
         var userInput =(Delivery.TaskStatus)int.Parse(Console.ReadLine()!);
-        delivery.OrderStatus = userInput;
-        if (_deliveryRepo.UpdateStatus(delivery))
+        if (_deliveryRepo.UpdateStatus(delivery, userInput))
         {
             System.Console.WriteLine("Success!");
         } else {

@@ -102,3 +102,8 @@ C:\ElevenFiftyProjects\codingFoundations\dotnetProjects\Gold Badge Challenge\GBU
 C:\ElevenFiftyProjects\codingFoundations\dotnetProjects\Gold Badge Challenge\GBUnitTest\GBC.Repository.Tests\obj\Debug\net7.0\GBC.Repository.Tests.pdb
 C:\ElevenFiftyProjects\codingFoundations\dotnetProjects\Gold Badge Challenge\GBUnitTest\GBC.Repository.Tests\obj\Debug\net7.0\GBC.Repository.Tests.genruntimeconfig.cache
 C:\ElevenFiftyProjects\codingFoundations\dotnetProjects\Gold Badge Challenge\GBUnitTest\GBC.Repository.Tests\obj\Debug\net7.0\ref\GBC.Repository.Tests.dll
+c:\ElevenFiftyProjects\codingFoundations\dotnetProjects\Gold Badge Challenge\GBUnitTest\GBC.Repository.Tests\bin\Debug\net7.0\GoldBadgeChallenge.UI.deps.json
+c:\ElevenFiftyProjects\codingFoundations\dotnetProjects\Gold Badge Challenge\GBUnitTest\GBC.Repository.Tests\bin\Debug\net7.0\GoldBadgeChallenge.UI.runtimeconfig.json
+c:\ElevenFiftyProjects\codingFoundations\dotnetProjects\Gold Badge Challenge\GBUnitTest\GBC.Repository.Tests\bin\Debug\net7.0\GoldBadgeChallenge.UI.exe
+c:\ElevenFiftyProjects\codingFoundations\dotnetProjects\Gold Badge Challenge\GBUnitTest\GBC.Repository.Tests\bin\Debug\net7.0\GoldBadgeChallenge.UI.dll
+c:\ElevenFiftyProjects\codingFoundations\dotnetProjects\Gold Badge Challenge\GBUnitTest\GBC.Repository.Tests\bin\Debug\net7.0\GoldBadgeChallenge.UI.pdb

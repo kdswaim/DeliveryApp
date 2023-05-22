@@ -25,6 +25,9 @@
   <ItemGroup>
     <ProjectReference Include="..\..\GoldBadgeChallenge.Data\GoldBadgeChallenge.Data.csproj" />
     <ProjectReference Include="..\..\GoldBadgeChallenge.Repository\GoldBadgeChallenge.Repository.csproj" />
+    <ProjectReference Include="..\GoldBadgeChallenge.Data\GoldBadgeChallenge.Data.csproj" />
+    <ProjectReference Include="..\GoldBadgeChallenge.Repository\GoldBadgeChallenge.Repository.csproj" />
+    <ProjectReference Include="..\..\GoldBadgeChallenge.UI\GoldBadgeChallenge.UI.csproj" />
   </ItemGroup>
 
 </Project>

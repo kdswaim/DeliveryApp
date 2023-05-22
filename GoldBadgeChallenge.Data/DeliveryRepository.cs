@@ -22,7 +22,6 @@ using System.Linq;
             deliveries.Add(delivery);
             deliveryqueue.Enqueue(delivery);
             return true;
-            System.Console.WriteLine("Delivery added successfully!");
           }
           
         }
@@ -39,11 +38,11 @@ using System.Linq;
             return deliveries.Remove(delivery);
         }
 
-    public bool UpdateStatus(Delivery delivery)
+    public bool UpdateStatus(Delivery delivery, Delivery.TaskStatus status)
     {
         var oldDelivery = GetDelivery(delivery.ID);
         if (oldDelivery!=null) {
-            oldDelivery.OrderStatus = delivery.OrderStatus;
+            oldDelivery.OrderStatus = status;
             return true;
         } else {
             return false;
